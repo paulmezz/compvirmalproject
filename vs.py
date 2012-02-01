@@ -21,11 +21,11 @@ for base_dir, sub_dirs, files in target_dir:
 	for filename in files:
 		print "Scanning: " + base_dir + "/" + filename
 		#Open each file
-		with open("./" + base_dir + "/" + filename,'rb') as activescan:
+		with open(os.path.abspath(base_dir + "/" + filename), 'rb') as activescan:
 			#pull in the lines from the file
 			for scanline in activescan.readlines():
 				#Step through the signatures pulled in above
 				for singlesig in signaturelines:
-					#The actual search (which is currently broken) carrage returns!
+					#The actual search
 					if singlesig in scanline:
 						print singlesig + " found in " + filename
