@@ -3,6 +3,9 @@
 import os
 import sys
 
+if len(sys.argv) != 3:
+	sys.exit ("Usage: vs.py [TARGET DIR TO SCAN] [SIGNATURE FILE]")
+
 target_dir = os.walk(sys.argv[1])
 sig_file = sys.argv[2]
 
