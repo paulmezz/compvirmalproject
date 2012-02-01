@@ -11,6 +11,7 @@ sig_file = sys.argv[2]
 #called lines
 with open(sig_file,'rb') as signatures:
 	signaturelines = signatures.readlines()
+	signaturelines = [s.strip() for s in signaturelines]
 #Just a debug to make sure it stepped through the lines
 #	for singlesig in lines:
 #		print "imported: " + singlesig
