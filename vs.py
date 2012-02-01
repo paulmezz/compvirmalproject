@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import os
-import sys 
+import sys
 
 target_dir = os.walk(sys.argv[1])
 sig_file = sys.argv[2]
@@ -11,6 +11,7 @@ sig_file = sys.argv[2]
 #called lines
 with open(sig_file,'rb') as signatures:
 	signaturelines = signatures.readlines()
+	signaturelines = [s.strip() for s in signaturelines]
 #Just a debug to make sure it stepped through the lines
 #	for singlesig in lines:
 #		print "imported: " + singlesig
@@ -19,7 +20,7 @@ with open(sig_file,'rb') as signatures:
 for base_dir, sub_dirs, files in target_dir:
 	for filename in files:
 		print "Scanning: " + base_dir + "/" + filename
-		#Open each file 
+		#Open each file
 		with open("./" + base_dir + "/" + filename,'rb') as activescan:
 			#pull in the lines from the file
 			for scanline in activescan.readlines():
