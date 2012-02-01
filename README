@@ -4,11 +4,6 @@ supplied and do a recursive search of a directory looking in all the files
 for those signatures.
 
 ToDo list:
-Wrap up the loops so it can step through every file with opens (and closes)
-
-Search each file byte by byte for each signature.  
-
-Determine longest signature and pull in that many bytes from the file being scanned
-
+Add protective coatings around the sharp bits.
 
 
