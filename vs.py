@@ -15,14 +15,11 @@ sig_file = sys.argv[2]
 with open(sig_file,'rb') as signatures:
 	signaturelines = signatures.readlines()
 	signaturelines = [s.strip() for s in signaturelines]
-#Just a debug to make sure it stepped through the lines
-#	for singlesig in lines:
-#		print "imported: " + singlesig
 
 #Step through the given directory
 for base_dir, sub_dirs, files in target_dir:
 	for filename in files:
-		print "Scanning: " + base_dir + "/" + filename
+		#print "Scanning: " + base_dir + "/" + filename
 		#Open each file
 		with open(os.path.abspath(base_dir + "/" + filename), 'rb') as activescan:
 			#pull in the lines from the file
@@ -31,4 +28,4 @@ for base_dir, sub_dirs, files in target_dir:
 				for singlesig in signaturelines:
 					#The actual search
 					if singlesig in scanline:
-						print singlesig + " found in " + os.path.abspath(base_dir + "/" + filename)
+						print singlesig + " found in " + base_dir + "/" + filename
