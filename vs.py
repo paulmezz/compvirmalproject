@@ -26,6 +26,6 @@ for base_dir, sub_dirs, files in target_dir:
 			for scanline in activescan.readlines():
 				#Step through the signatures pulled in above
 				for singlesig in signaturelines:
-					#The actual search (which is currently broken)
+					#The actual search (which is currently broken) carrage returns!
 					if singlesig in scanline:
 						print singlesig + " found in " + filename
