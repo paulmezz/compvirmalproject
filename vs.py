@@ -18,11 +18,9 @@ with open(sig_file,'rb') as signatures:
 #Step through the given directory
 for base_dir, sub_dirs, files in target_dir:
 	for filename in files:
-#Right now this is a print, in the future it will scan the file
-#		print base_dir + "/" + filename
+		print "Scanning: " + base_dir + "/" + filename
 		with open("./" + base_dir + "/" + filename,'rb') as activescan:
 			for scanline in activescan.readlines():
 				for singlesig in signaturelines:
-					print "singlesig = " + singlesig
 					if singlesig in scanline:
 						print singlesig + " found in " + filename
