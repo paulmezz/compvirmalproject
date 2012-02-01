@@ -31,4 +31,4 @@ for base_dir, sub_dirs, files in target_dir:
 				for singlesig in signaturelines:
 					#The actual search
 					if singlesig in scanline:
-						print singlesig + " found in " + filename
+						print singlesig + " found in " + os.path.abspath(base_dir + "/" + filename)
